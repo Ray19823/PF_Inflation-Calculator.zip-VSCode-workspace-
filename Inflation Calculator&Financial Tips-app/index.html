@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflation Calculator & Financial Tips</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Inflation Calculator & Financial Tips</h1>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Inflation Calculator</h2>
+            <form id="inflation-form">
+                <label for="amount">Enter Amount (in $):</label>
+                <input type="number" id="amount" placeholder="e.g., 1000" required>
+                
+                <label for="start-year">Starting Year:</label>
+                <input type="number" id="start-year" placeholder="e.g., 2000" required>
+                
+                <label for="end-year">Ending Year:</label>
+                <input type="number" id="end-year" placeholder="e.g., 2023" required>
+                
+                <button type="submit">Calculate Inflation</button>
+            </form>
+            <div id="results"></div>
+        </section>
+        <section>
+            <h2>Inflation Trends</h2>
+            <canvas id="inflation-chart"></canvas>
+        </section>
+        <section class="accordion-section">
+            <h2>Saved Results & File Upload</h2>
+            <button class="accordion">Saved Results</button>
+            <div class="accordion-content">
+                <p>View, manage, or delete your saved results below:</p>
+                <table id="saved-results">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Start Year</th>
+                            <th>End Year</th>
+                            <th>Adjusted Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Saved results will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="accordion">File Upload</button>
+            <div class="accordion-content">
+                <p>Upload a file containing historical data for analysis:</p>
+                <form id="file-upload-form">
+                    <label for="file-upload">Choose a file:</label>
+                    <input 
+                        type="file" 
+                        id="file-upload" 
+                        title="Upload a file for analysis"
+                        aria-describedby="file-upload-description"
+                    />
+                    <p id="file-upload-description" class="sr-only">
+                        Select a file containing inflation data to upload.
+                    </p>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </section>        
+        </main>
+    <script src="script.js"></script>
+</body>
+</html>
